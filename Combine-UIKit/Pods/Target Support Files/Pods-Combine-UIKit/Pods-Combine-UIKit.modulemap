@@ -1,0 +1,6 @@
+framework module Pods_Combine_UIKit {
+  umbrella header "Pods-Combine-UIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
