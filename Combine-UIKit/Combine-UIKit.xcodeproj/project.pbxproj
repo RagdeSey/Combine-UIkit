@@ -13,6 +13,11 @@
 		4F6C11B7250F0BB8006BA5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C11B5250F0BB8006BA5CC /* Main.storyboard */; };
 		4F6C11B9250F0BBB006BA5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C11B8250F0BBB006BA5CC /* Assets.xcassets */; };
 		4F6C11BC250F0BBB006BA5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C11BA250F0BBB006BA5CC /* LaunchScreen.storyboard */; };
+		4F6C11CB250F204C006BA5CC /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C11CA250F204C006BA5CC /* CharactersTableViewCell.swift */; };
+		4F6C11CE250F2722006BA5CC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C11CD250F2722006BA5CC /* UIImageView+Extension.swift */; };
+		4F6C11D0250F2A9F006BA5CC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C11CF250F2A9F006BA5CC /* Character.swift */; };
+		4F6C11D3250F2B74006BA5CC /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C11D2250F2B74006BA5CC /* CharacterService.swift */; };
+		4F6C11D5250F2E68006BA5CC /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C11D4250F2E68006BA5CC /* CharacterViewModel.swift */; };
 		CDD29587434C5E9D7107C100 /* Pods_Combine_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40736222534DA284AC2A6DC /* Pods_Combine_UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +30,11 @@
 		4F6C11B8250F0BBB006BA5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F6C11BB250F0BBB006BA5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F6C11BD250F0BBB006BA5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F6C11CA250F204C006BA5CC /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		4F6C11CD250F2722006BA5CC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		4F6C11CF250F2A9F006BA5CC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		4F6C11D2250F2B74006BA5CC /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		4F6C11D4250F2E68006BA5CC /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		87F5D7024B459B2055C0BC54 /* Pods-Combine-UIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Combine-UIKit.debug.xcconfig"; path = "Target Support Files/Pods-Combine-UIKit/Pods-Combine-UIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		C40736222534DA284AC2A6DC /* Pods_Combine_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Combine_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6EAAB97460867E71B5C3BA /* Pods-Combine-UIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Combine-UIKit.release.xcconfig"; path = "Target Support Files/Pods-Combine-UIKit/Pods-Combine-UIKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +79,7 @@
 				4F6C11C6250F0D7C006BA5CC /* Service */,
 				4F6C11C5250F0D74006BA5CC /* ViewModel */,
 				4F6C11C4250F0D6B006BA5CC /* ViewControllers */,
+				4F6C11CC250F26F3006BA5CC /* Extensions */,
 			);
 			path = "Combine-UIKit";
 			sourceTree = "<group>";
@@ -89,6 +100,7 @@
 			children = (
 				4F6C11B3250F0BB8006BA5CC /* ViewController.swift */,
 				4F6C11B5250F0BB8006BA5CC /* Main.storyboard */,
+				4F6C11CA250F204C006BA5CC /* CharactersTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +108,7 @@
 		4F6C11C5250F0D74006BA5CC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4F6C11D4250F2E68006BA5CC /* CharacterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,6 +116,7 @@
 		4F6C11C6250F0D7C006BA5CC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4F6C11D2250F2B74006BA5CC /* CharacterService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -110,8 +124,17 @@
 		4F6C11C7250F0F15006BA5CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F6C11CF250F2A9F006BA5CC /* Character.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4F6C11CC250F26F3006BA5CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F6C11CD250F2722006BA5CC /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		804288D13AB5D0177D3EBAB6 /* Frameworks */ = {
@@ -246,9 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6C11CE250F2722006BA5CC /* UIImageView+Extension.swift in Sources */,
 				4F6C11B4250F0BB8006BA5CC /* ViewController.swift in Sources */,
+				4F6C11D3250F2B74006BA5CC /* CharacterService.swift in Sources */,
 				4F6C11B0250F0BB8006BA5CC /* AppDelegate.swift in Sources */,
+				4F6C11D5250F2E68006BA5CC /* CharacterViewModel.swift in Sources */,
+				4F6C11D0250F2A9F006BA5CC /* Character.swift in Sources */,
 				4F6C11B2250F0BB8006BA5CC /* SceneDelegate.swift in Sources */,
+				4F6C11CB250F204C006BA5CC /* CharactersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
