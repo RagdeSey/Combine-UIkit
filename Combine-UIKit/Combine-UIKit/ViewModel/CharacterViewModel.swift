@@ -23,7 +23,7 @@ class CharacterViewModel {
         input.flatMap { _ in
             self.dependencies.fetchCharacters(endpoint: .randomChars)
                 .map { ResultCharacters.success($0) }
-                .catch { Just(.failure($0)) }.eraseToAnyPublisher()
+                .catch { Just(.failure($0)) }
         }.eraseToAnyPublisher()
     }
 }

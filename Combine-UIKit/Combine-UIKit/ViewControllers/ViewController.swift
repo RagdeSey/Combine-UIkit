@@ -74,8 +74,9 @@ class ViewController: UIViewController {
         }.store(in: &subscriptions)
 
         //create subscription when add button is tapped and start the animated the activity indicator.
-        tapPublisher.sink { [weak self] _ in
-            self?.acitivityIndicator.startAnimating()
+        tapPublisher.receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.acitivityIndicator.startAnimating()
         }.store(in: &subscriptions)
     }
 
@@ -84,7 +85,7 @@ class ViewController: UIViewController {
 
         //create the subscription for delete button tap action
         publisher.receive(on: DispatchQueue.main).sink { [weak self] _ in
-            guard let currentCharacters = self?.viewModel.breakingBadCharacters  else { return }
+            guard let currentCharacters = self?.viewModel.breakingBadCharacters, currentCharacters.count > 0  else { return }
             let rand = Int.random(in: 0..<currentCharacters.count )
             self?.viewModel.breakingBadCharacters.remove(at: rand)
             self?.dataSource?.defaultRowAnimation = .middle

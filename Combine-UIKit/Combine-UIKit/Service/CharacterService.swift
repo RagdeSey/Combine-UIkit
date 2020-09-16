@@ -19,7 +19,7 @@ class CharacterService {
     func fetchCharacters(endpoint: CharacterEndpoints) -> AnyPublisher<[Character], Error> {
         let url = URL(string:  "\(baseURL)\(endpoint.rawValue)")!
         return URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data).print()
+            .map(\.data)
             .decode(type: [Character].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
