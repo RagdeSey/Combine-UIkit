@@ -19,6 +19,7 @@ class CharacterViewModel {
         self.dependencies = dependencies
     }
 
+    // Method that fetch the character and map it to Anypublisher that needs not to fail.
     func fetchCharacter(input: AnyPublisher<Void, Never>) -> AnyPublisher<ResultCharacters, Never> {
         input.flatMap { _ in
             self.dependencies.fetchCharacters(endpoint: .randomChars)

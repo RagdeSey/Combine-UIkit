@@ -16,6 +16,7 @@ class CharacterService {
         case randomChars = "character/random"
     }
 
+    // Method that fetch the characters from the API.
     func fetchCharacters(endpoint: CharacterEndpoints) -> AnyPublisher<[Character], Error> {
         let url = URL(string:  "\(baseURL)\(endpoint.rawValue)")!
         return URLSession.shared.dataTaskPublisher(for: url)
